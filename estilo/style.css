@@ -1,7 +1,7 @@
 *{
 	padding: 0;
 	margin: 0;
-	font-family: 'Open Sans';
+	font-family: 'Raleway', sans-serif;
 	box-sizing: border-box;
 }
 
@@ -22,6 +22,7 @@ img{
 
 .w33{
 	width: 33.3%;
+	padding: 0 10px;
 }
 
 .w50{
@@ -54,6 +55,13 @@ header .logo{
 	font-size: 30px;
 	color: white;
 	font-weight: 300;
+	border: 1px solid white;
+	padding: 3px;
+}
+
+header .logo a{
+	text-decoration: none;
+	color: white;
 }
 
 .mobile{
@@ -79,6 +87,10 @@ nav.desktop a {
 	color: white;
 	text-decoration: none;
 
+}
+
+nav.desktop a:hover{
+	box-shadow: 1px 1px 1px 1px white;
 }
 
 section.banner-principal{
@@ -160,7 +172,7 @@ span.sanches{
 section.descricao-autor h2 {
 	font-size: 40px;
 	font-family:'Indie Flower', cursive;
-	font-we3ight: 400;
+	font-weight:400;
 	color: #444;
 
 }
@@ -171,7 +183,125 @@ section.descricao-autor p{
 	margin-top: 10px;
 }
 
-@media screen and (max-width: 700px){
+section.especialidades{
+	padding: 40px 0;
+	background: #ecf0f1;
+}
+
+section.especialidades h2.title{
+	font-size: 30px;
+	text-align: center;
+	font-weight: 400;
+	color: #34495e;
+}
+
+.box-especialidade{
+	text-align: center;
+	margin:40px 0;
+	padding: 0 30px;
+}
+
+.box-especialidade h3{
+	color:#34495e;
+	font-size: 40px;
+}
+
+.box-especialidade h4{
+	font-weight: 300;
+	font-size: 25px;
+	color: #34495e;
+}
+
+.box-especialidade p {
+	color: #34495e;
+	font-size: 17px;
+	margin-top: 10px;
+}
+
+section.extras{
+	padding: 30px 0;
+	background: #c0392b;
+}
+
+.servicos-container,.depoimentos-container{
+	padding: 0 2%;
+}
+
+section.extras .title{
+	color: white;
+	font-weight: 300;
+	font-size: 25px;
+	margin-bottom: 15px;
+}
+
+.depoimento-single{
+	padding: 15px 0;
+	border-bottom: 1px solid #e74c3c;
+}
+
+p.depoimento-descricao{
+	font-size: 15px;
+	color: white;
+	font-weight: 300;
+}
+
+p.nome-autor{
+	font-size: 18px;
+	color: white;
+	margin-top: 5px;
+	font-weight: bold;
+}
+
+.servicos ul {
+	margin: 20px 0;
+	list-style-position: inside;
+}
+
+.servicos li {
+	margin-top: 20px;
+	font-size: 15px;
+	color: white;
+	font-weight: 300;
+}
+
+footer{
+
+	background: #c0392b;
+	padding: 30px 0;
+}
+
+footer p{
+	color: white;
+	text-align: center;
+	font-size: 15px;
+}
+
+@media screen and (max-width: 768px){
+
+	img{
+		float: none !important;
+		display: block;
+		margin:0 auto;
+
+
+	}
+	.w50{
+		padding: 20px;
+		width: 100%;
+	}
+
+	.w33{
+		padding: 20px;
+		width: 100%;
+	}
+
+	.box-especialidade{
+		padding: 40px 20px;
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 890px){
 	nav.desktop{
 		display: none;
 	}
@@ -202,7 +332,7 @@ section.descricao-autor p{
 		font-weight: 300;
 		width: 100%
 		display: block;
-		background: white;
+		background: #c0392b;
 		border-bottom: 1px solid #ccc;
 		font-size: 17px;
 		padding: 8px 0;
@@ -212,23 +342,7 @@ section.descricao-autor p{
 
 	nav.mobile li a{
 		display: block;
-		color: #444;
+		color: white;
 		text-decoration: none;
-	}
-}
-
-
-@media screen and (max-width: 768px){
-
-	img{
-		float: none !important;
-		display: block;
-		margin:0 auto;
-
-
-	}
-	.w50{
-		padding: 20px;
-		width: 100%;
 	}
 }
