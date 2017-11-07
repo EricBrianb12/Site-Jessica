@@ -13,7 +13,6 @@
 	<meta charset="utf-8" />
 </head>
 <body>
-
 	<header>
 		<div class="center">
 			<div class="logo left" ><a href="/">Dra. Jessica Sanches</a></div><!-- logo -->

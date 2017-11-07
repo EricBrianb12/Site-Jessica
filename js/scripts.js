@@ -1,4 +1,4 @@
-$(function()[
+$(function(){
 	//aqui vai todo nosso código de javascript
 
 	$('nav.mobile').click(function(){
@@ -32,8 +32,6 @@ $(function()[
 
 		//fa fa-bars
 		//fa fa-times
-
-		//parei no min 07:20
 			
 	})
-])
+})
