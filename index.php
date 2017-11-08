@@ -14,9 +14,25 @@
 	<meta charset="utf-8" />
 </head>
 <body>
+
+	<?php 
+		//faz uma verificação para ver se a url solicitada existe
+		$url = isset($_GET['url']) ? $_GET['url'] : 'home';
+
+		switch ($url) {
+			case 'sobre':
+				echo '<target target="sobre" />';
+				break;
+			
+			case 'servicos':
+				echo '<target target="servicos" />';
+				break;
+		}
+
+	 ?>
 	<header>
 		<div class="center">
-			<div class="logo left" ><a href="index.php">Dra. Jessica Sanches</a></div><!-- logo -->
+			<div class="logo left" ><a href="home">Dra. Jessica Sanches</a></div><!-- logo -->
 			<nav class="desktop right">
 				<ul>
 					<li><a href="<?php echo INCLUDE_PATH; ?>home">Home</a></li>
@@ -41,19 +57,18 @@
 	</header>
 
 	<?php 
-
-		//faz uma verificação para ver se a url solicitada existe
-		$url = isset($_GET['url']) ? $_GET['url'] : 'home';
-
 		//caso o arquivo com o nome solicitado existaele vai abrir
 		if (file_exists('pages/'.$url.'.php')) {
 			include('pages/'.$url.'.php');
 		}else{
 
-			$pagina404 = true;
-
-			//caso nao exista vai abrir o arquivo 404.php
-			include('pages/404.php');
+			if ($url != 'sobre' && $url != 'servicos') {
+				$pagina404 = true;
+				//caso nao exista vai abrir o arquivo 404.php
+				include('pages/404.php');
+			}else{
+				include('pages/home.php');
+			}
 		}
 		
 	 ?>
@@ -65,9 +80,21 @@
 	</footer>
 
 	<script type="text/javascript" src="<?php echo INCLUDE_PATH; ?>js/jquery.js"></script>
-	<script src="<?php echo INCLUDE_PATH; ?>js/scripts.js">
-		
-	</script>
+	<script src="<?php echo INCLUDE_PATH; ?>js/scripts.js"></script>
 
+
+	<!-- if para o funcionamento do slide apenas para a página home -->
+	 <?php 
+		if ($url =='home' || $url == '') {
+	 ?>
+	<script src="<?php echo INCLUDE_PATH; ?>js/slider.js"></script> 
+	<?php } ?>
+
+	<?php 
+		if ($url == 'contato') {
+	 ?>
+		<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4'></script>
+		<script  src="<?php echo INCLUDE_PATH; ?>js/map.js"></script>
+	<?php } ?>
 </body>
 </html>
