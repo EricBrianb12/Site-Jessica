@@ -1,47 +1,78 @@
 $(function(){
-	//aqui vai todo nosso código de javascript
-
+	//Aqui vai todo nosso código de javascript.
 	$('nav.mobile').click(function(){
-		//o que vai acontecer quando cliclarmos na nav mobile
-		
+		//O que vai acontecer quando clicarmos na nav.mobile!
 		var listaMenu = $('nav.mobile ul');
-		//abrir menu atraves do fadein
-
-		/*if (listaMenu.is(':hidden') == true){
+		//Abrir menu através do fadein
+		/*
+		if(listaMenu.is(':hidden') == true){
 			listaMenu.fadeIn();
-		}else{
+		}
+		else{
 			listaMenu.fadeOut();
-		}*/
+		}
+		*/
 
-		//comando p/ abrir ou fechar o menu
-		// listaMenu.slideToggle();
+		//Abrir ou fechar sem efeitos
+		/*
+		
+		if(listaMenu.is(':hidden') == true){
+			//listaMenu.show();
+			listaMenu.css('display','block');
+		}
+		else{
+			//listaMenu.hide();
+			listaMenu.css('display','none');
+		}
+		*/
 
-		if (listaMenu.is(':hidden') == true){
-
-			//var icone = ('.botao-menu-mobile i'); e o msm qe o de baixo
+		if(listaMenu.is(':hidden') == true){
+			//fa fa-times
+			//fa fa-bars
+			//var icone =  $('.botao-menu-mobile i');
 			var icone = $('.botao-menu-mobile').find('i');
-			icone.removeClass('fa fa-bars');
-			icone.addClass('fa fa-times');
+			icone.removeClass('fa-bars');
+			icone.addClass('fa-times');
 			listaMenu.slideToggle();
-		}else{
+		}
+		else{
 			var icone = $('.botao-menu-mobile').find('i');
-			icone.removeClass('fa fa-times');
-			icone.addClass('fa fa-bars');
+			icone.removeClass('fa-times');
+			icone.addClass('fa-bars');
 			listaMenu.slideToggle();
 		}
 
-		//fa fa-bars
-		//fa fa-times
-			
 	});
 
-	if ($('target').length > 0) {
+	if($('target').length > 0){
 		//O elemento existe, portanto precisamos dar o scroll em algum elemento.
 		var elemento = '#'+$('target').attr('target');
+
 		var divScroll = $(elemento).offset().top;
 
-		$('html,body').animate({'scrollTop':divScroll},2000);
+		$('html,body').animate({scrollTop:divScroll},2000);
+	}
 
+
+
+	carregarDinamico();
+	function carregarDinamico(){
+		$('[realtime]').click(function(){
+			var pagina = $(this).attr('realtime');
+			$('.container-principal').hide();
+			$('.container-principal').load(INCLUDE_PATH+'pages/'+pagina+'.php');
+			
+			setTimeout(function(){
+				initialize();
+				addMarker(-23.456430, -51.94411,'',"Consultório Sanches",undefined,false);
+
+			},1000);
+
+			$('.container-principal').fadeIn(1000);
+			window.history.pushState('', '',pagina);
+
+			return false;
+		})
 	}
 
 })

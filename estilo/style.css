@@ -401,8 +401,27 @@ section.erro-404 a{
 	font-size: 23px;
 }
 
+.bullets{
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 5;
+}
 
+.bullets span{
+	margin: 0 5px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: #444;
+}
 
+.bullets span.active-slider{
+	background-color: white;
+}
 @media screen and (max-width: 768px){
 
 	img{

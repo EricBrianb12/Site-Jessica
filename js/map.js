@@ -1,5 +1,4 @@
-$(function(){
-	var map;
+var map;
 	
 	function initialize() {
 
@@ -73,7 +72,7 @@ $(function(){
 	    	}
 	}
 
-
+$(function(){
 	initialize();
 	addMarker(-23.456430, -51.94411,'',"Consultório Sanches",undefined,false);
 
