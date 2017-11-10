@@ -17,8 +17,6 @@ $(function(){
 				return false;
 			}
 
-			//alert('chamando intervalo');
-
 			$('.box-especialidade').eq(atual).fadeIn();
 
 		}

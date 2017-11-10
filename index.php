@@ -4,7 +4,7 @@
 <head>
 	<title>Odontologia Sanches</title>
 	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/font-awesome.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
 	 <link href="https://fonts.googleapis.com/css?family=Indie+Flower:400" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="<?php echo INCLUDE_PATH; ?>estilo/style.css">
@@ -15,6 +15,39 @@
 	<meta charset="utf-8" />
 </head>
 <body>
+
+	<?php 
+
+		if(isset($_POST['acao']) && $_POST['identificador'] == 'form_contato') 
+		{
+		 /*	$nome = $_POST['nome'];
+		 	$email = $_POST['email'];
+		 	$telefone = $_POST['telefone'];
+		 	$mensagem = $_POST['mensagem'];*/
+
+		 	$assunto = 'Novo e-mail do site';
+		 	$corpo = '';
+		 	foreach ($_POST as $key => $value) {
+		 		
+		 		$corpo.= ucfirst($key).": ".$value;
+		 		$corpo.="<hr/>";
+		 		$corpo.='<br>';
+		 	}
+
+		 	$info = array('assunto' => $assunto,'corpo'=>$corpo);
+		 	$mail = new Email('br732.hostgator.com.br', 'hospedagem@ewdconsultoria.com.br','hospedagem1234','eric');
+		 	$mail->addAdress('eric.brianb12@gmail.com','Eric');
+		 	$mail->formatarEmail($info);
+		 	if ($mail->enviarEmail()) {
+		 		echo '<script> alert("Enviado com sucesso!") </script>';
+		 	}else{
+		 		echo '<script> alert("Algo Deu errado!") </script>';
+		 	}
+
+		}
+	?>
+
+
 	<base base="<?php echo INCLUDE_PATH; ?>" />
 
 	<?php 
@@ -32,6 +65,9 @@
 		}
 
 	 ?>
+
+
+
 	<header>
 		<div class="center">
 			<div class="logo left" ><a href="home">Dra. Jessica Sanches</a></div><!-- logo -->

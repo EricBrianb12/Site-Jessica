@@ -6,11 +6,8 @@
 
 		<div class="overlay"></div><!-- overlay -->
 		<div class="center">
-			<form>
-				<h2>Qual o seu melhor E-mail?</h2>
-				<input type="email" name="email" required>
-				<input type="submit" name="acao" value="Cadastrar!">
-			</form>
+			<h2>Sempre teve o sonho de encantar as pessoas com um sorriso ?</h2>
+			<p>A odontológia Sanches está aqui para te ajudar</p>
 		</div><!-- center -->
 			
 		<div class="bullets">

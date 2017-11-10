@@ -130,7 +130,7 @@ section.banner-container{
 	z-index: 2;
 }
 
-section.banner-container form{
+section.banner-container h2{
 	width: 98%
 	max-width: 600px;
 	z-index: 3;
@@ -138,14 +138,23 @@ section.banner-container form{
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%,-50%);
-	-ms-transform: translate(-50%,-50%);
+	color: white;
+	font-size: 45px;
+	font-weight: 400;
 }
 
-section.banner-container form h2{
+section.banner-container p{
+	width: 98%
+	max-width: 600px;
+	z-index: 3;
+	position: absolute;
+	left: 50%;
+	top: 70%;
+	transform: translate(-50%,-50%);
 	color: white;
+	font-size: 30px;
 	font-weight: 300;
-	font-size: 40px;
-	text-align: center;
+	font-style: italic;
 }
 
 section.banner-container form input[type=email]{
